@@ -2,7 +2,7 @@ package io.github.hoschi_it.NetworkAnalysis.data;
 
 public class Adjazenzmatrix {
 
-	private List<int[]> matrix;
+	private List<Integer[]> matrix;
 	private int columnCount;
 	private int rowCount;
 	
@@ -12,13 +12,13 @@ public class Adjazenzmatrix {
 	public int getRowCount() {
 		return rowCount;
 	}
-	public List<int[]> getMatrix(){
+	public List<Integer[]> getMatrix(){
 		return this.matrix;
 	}
 	
 	public Adjazenzmatrix() {}
 	
-	public Adjazenzmatrix(List<int[]> matrix) {
+	public Adjazenzmatrix(List<Integer[]> matrix) {
 		this.matrix = matrix;
 		this.columnCount = matrix.get(0).length;
 		this.rowCount = matrix.size();
