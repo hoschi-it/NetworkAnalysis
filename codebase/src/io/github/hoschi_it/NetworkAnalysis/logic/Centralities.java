@@ -1,20 +1,18 @@
 package io.github.hoschi_it.NetworkAnalysis.logic;
 
-
-import io.github.hoschi_it.NetworkAnalysis.data.Graph;
+import io.github.hoschi_it.NetworkAnalysis.data.*;
 
 import java.util.ArrayList;
 
 public class Centralities
 {
-    public ArrayList<Integer> calculateInnerDegrees(Graph graph){
+    public void calculateInnerDegrees(Graph graph){
         ArrayList<Integer> innerDegrees = new ArrayList<>();
 
         for(int id: graph.getNodeIds()){
+            Node node = graph.getNodeById(id);
             int degree = graph.getConnectionsTo(id).size();
-            innerDegrees.add(degree);
+            node.setInnerDegree(degree);
         }
-
-        return innerDegrees;
     }
 }

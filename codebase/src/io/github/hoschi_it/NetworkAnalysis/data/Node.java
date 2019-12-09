@@ -20,4 +20,18 @@ public class Node
         _closenes = closenes;
     }
 
+    public int getInnerDegree()
+    {
+        return _innerDegree;
+    }
+
+    public float getBetweennes()
+    {
+        return _betweennes;
+    }
+
+    public int getClosenes()
+    {
+        return _closenes;
+    }
 }
