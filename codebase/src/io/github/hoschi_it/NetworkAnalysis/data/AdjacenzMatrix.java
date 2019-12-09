@@ -11,9 +11,11 @@ public class AdjacenzMatrix {
     public int getColumnCount() {
         return columnCount;
     }
+
     public int getRowCount() {
         return rowCount;
     }
+
     public List<Integer[]> getMatrix(){
         return this.matrix;
     }

@@ -38,8 +38,18 @@ public class Graph
         return connections;
     }
 
+    public ArrayList<Integer> getInnerDegrees(){
+        ArrayList<Integer> innerDegrees = new ArrayList<>();
+
+        for(Node node: _nodes){
+            int d = node.getInnerDegree();
+            innerDegrees.add(d);
+        }
+        return innerDegrees;
+    }
+
     @Contract(pure = true)
-    private Node getNodeById(int id){
+    public Node getNodeById(int id){
         return _nodes.get(id);
     }
 
