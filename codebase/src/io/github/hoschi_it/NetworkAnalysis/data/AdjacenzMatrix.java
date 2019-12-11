@@ -1,19 +1,27 @@
 package io.github.hoschi_it.NetworkAnalysis.data;
 
+import jdk.jshell.spi.ExecutionControl;
+
 import java.util.List;
 
 public class AdjacenzMatrix {
 
 	private List<Integer[]> matrix;
-	private int columnCount;
-	private int rowCount;
+	private int _columnCount;
+	private int _rowCount;
 	
 	public int getColumnCount() {
-		return columnCount;
+		return _columnCount;
 	}
+
 	public int getRowCount() {
-		return rowCount;
+		return _rowCount;
 	}
+
+	public int getCell(int from, int to){
+		return matrix.get(from)[to];
+	}
+
 	public List<Integer[]> getMatrix(){
 		return this.matrix;
 	}
@@ -29,10 +37,10 @@ public class AdjacenzMatrix {
 	
 	public AdjacenzMatrix(List<Integer[]> matrix) {
 		this.matrix = matrix;
-		this.columnCount = matrix.get(0).length;
-		this.rowCount = matrix.size();
+		this._columnCount = matrix.get(0).length;
+		this._rowCount = matrix.size();
 		
 		ignoreDiagonals();
-	}	
+	}
 }
 

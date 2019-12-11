@@ -4,7 +4,8 @@ public class Node
 {
     private int _innerDegree;
     private float _betweennes;
-    private int _closenes;
+    private float _closenes;
+    private int _id;
 
     public void setInnerDegree(int innerDegree){
         _innerDegree = innerDegree;
@@ -15,7 +16,7 @@ public class Node
         _betweennes = betweennes;
     }
 
-    public void setClosenes(int closenes)
+    public void setClosenes(float closenes)
     {
         _closenes = closenes;
     }
@@ -30,8 +31,18 @@ public class Node
         return _betweennes;
     }
 
-    public int getClosenes()
+    public float getClosenes()
     {
         return _closenes;
+    }
+
+    public int getId()
+    {
+        return _id;
+    }
+
+    public void setId(int id)
+    {
+        _id = id;
     }
 }

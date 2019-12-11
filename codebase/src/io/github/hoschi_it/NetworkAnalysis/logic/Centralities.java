@@ -2,17 +2,32 @@ package io.github.hoschi_it.NetworkAnalysis.logic;
 
 import io.github.hoschi_it.NetworkAnalysis.data.*;
 
-import java.util.ArrayList;
-
 public class Centralities
 {
-    public void calculateInnerDegrees(Graph graph){
-        ArrayList<Integer> innerDegrees = new ArrayList<>();
+    private IGraph _graph;
+    private InnerDegreeCalculator _innerDegreeCalculator;
+    private ClosenessCalculator _closenessCalculator;
 
-        for(int id: graph.getNodeIds()){
-            Node node = graph.getNodeById(id);
-            int degree = graph.getConnectionsTo(id).size();
-            node.setInnerDegree(degree);
-        }
+    public Centralities(IGraph graph){
+        _graph = graph;
+        _innerDegreeCalculator = new InnerDegreeCalculator(_graph.getAdjacenzMatrix());
+        _closenessCalculator = new ClosenessCalculator(_graph);
+    }
+
+    /**
+     * Calculate for every node
+     * - Inner Degree
+     * - Betweenness Centrality
+     * - Closeness Centrality
+     *
+     * Save those values in the node objects
+     */
+    public void doMath(){
+        calcAndCacheInnerDegrees();
+    }
+
+    private void calcAndCacheInnerDegrees(){
+        Node[] nodes = _graph.getNodes();
+        _innerDegreeCalculator.calcAndCacheInnerDegree(nodes);
     }
 }
