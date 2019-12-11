@@ -1,7 +1,5 @@
 package io.github.hoschi_it.NetworkAnalysis.data;
 
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -27,7 +25,7 @@ public class Graph
         return getConnections(id, true);
     }
 
-    @NotNull
+
     private ArrayList<Connection> getConnections(int id, boolean from){
         ArrayList<Connection> connections = new ArrayList<>();
         for(Connection c: _connections){
@@ -48,7 +46,7 @@ public class Graph
         return innerDegrees;
     }
 
-    @Contract(pure = true)
+
     public Node getNodeById(int id){
         return _nodes.get(id);
     }
