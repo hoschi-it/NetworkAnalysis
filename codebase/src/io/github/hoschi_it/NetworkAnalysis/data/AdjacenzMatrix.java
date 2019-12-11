@@ -2,7 +2,7 @@ package io.github.hoschi_it.NetworkAnalysis.data;
 
 import java.util.List;
 
-public class Adjazenzmatrix {
+public class AdjacenzMatrix {
 
 	private List<Integer[]> matrix;
 	private int columnCount;
@@ -18,16 +18,16 @@ public class Adjazenzmatrix {
 		return this.matrix;
 	}
 	
-	public Adjazenzmatrix() {}
+	public AdjacenzMatrix() {}
 	
 	private void ignoreDiagonals() {
-		for(int i = 0; i < matrix.size; i++)
+		for(int i = 0; i < matrix.size(); i++)
 			for(int j=0; j < matrix.get(i).length; j++)
 				if(i == j)
 					matrix.get(i)[j] = 0;
 	}
 	
-	public Adjazenzmatrix(List<Integer[]> matrix) {
+	public AdjacenzMatrix(List<Integer[]> matrix) {
 		this.matrix = matrix;
 		this.columnCount = matrix.get(0).length;
 		this.rowCount = matrix.size();
